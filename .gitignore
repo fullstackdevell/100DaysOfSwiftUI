@@ -1,0 +1,60 @@
+# Xcode
+.DS_Store
+*.xcodeproj
+*.xcworkspace
+*.xccheckout
+*.xcscheme
+*.xcscmblueprint
+*.xcscmblueprint.user
+*.xcuserstate
+
+# Build products
+build/
+DerivedData/
+.build/
+*/DerivedData/
+*.build/
+*.app
+*.ipa
+*.dSYM
+
+# Dependencies
+Pods/
+Carthage/Build/
+SwiftPackageManager/
+# If using Swift Package Manager
+.swiftpm/xcode/package.xcworkspace/
+.swiftpm/xcode/xcuserdata/
+.swiftpm/xcode/DerivedData/
+
+# Backups and temporary files
+*~.nib
+*~.xib
+*~.h
+*~.m
+*~.swift
+*~.storyboard
+*.bak
+*.swap
+*.log
+.DS_Store
+.localized
+.Trashes
+.Spotlight-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotbackup
+
+# User-specific
+*.playground/xcuserdata/
+*.playground/timeline.xctimeline
+*.playground/playground.xcworkspace
+*.playground/playground.xcworkspace/xcuserdata/
+*.playground/playground.xcworkspace/xcshareddata/
+*.playground/playground.xcworkspace/build/
+
+# Local data
+*.temp_case_insensitive_rename
+.tool-version
+.env
+.idea/
