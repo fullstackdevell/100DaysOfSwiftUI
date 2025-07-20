@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var showingGameOver = false
     @State private var showingScore = false
 
-    @State private var shouldWin = false
+    @State private var shouldWin = Bool.random()
 
     let moveEmojis = ["🪨", "📄", "✂️"]
     let totalQuestions = 10
@@ -41,7 +41,7 @@ struct ContentView: View {
                         Text("App's move is: \(possibleMoves[correctAnswer])")
                             .foregroundStyle(.white)
                             .font(.title2.bold())
-                        Text("\(goalTitle)")
+                        Text("Your goal is: \(goalTitle)")
                             .foregroundStyle(.white)
                             .font(.title2.bold())
                     }
@@ -153,19 +153,18 @@ struct ContentView: View {
         }
         
         questionsCounter += 1
-        
-        if questionsCounter == totalQuestions {
-            showingGameOver = true
-        } else {
-            showingScore = true
-        }
+        showingScore = true
     }
 
     func askQuestion() {
-        possibleMoves.shuffle()
-        correctAnswer = Int.random(in: 0...2)
-        shouldWin.toggle()
-        goalTitle = shouldWin ? "Your goal is to win" : "Your goal is to lose"
+        if questionsCounter == totalQuestions {
+            showingGameOver = true
+        } else {
+            possibleMoves.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            shouldWin.toggle()
+            goalTitle = shouldWin ? "to win" : "to lose"
+        }
     }
 
     func resetGame() {
