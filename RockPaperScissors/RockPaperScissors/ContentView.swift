@@ -98,6 +98,9 @@ struct ContentView: View {
             playerWins = false
         } else {
             if movesDictionary[playerMove] == appMove {
+                // for example if playerMove = "Paper" and appMove = "Rock"
+                // if movesDictionary["Paper"] == "Rock"
+                // if you look up "Paper" in dictionary it gives "Rock" so user wins
                 playerWins = true
             } else {
                 playerWins = false
